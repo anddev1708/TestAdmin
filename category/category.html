@@ -1,0 +1,34 @@
+<div ng-controller="categoryController">
+  <form>
+    <div class="form-group">
+      <label for="usr">Name:</label>
+      <input type="text" class="form-control" ng-model="newCategory.Name">
+    </div>
+    <div class="form-group">
+      <label for="usr">Url:</label>
+      <input type="text" class="form-control" ng-model="newCategory.Url">
+    </div>
+    <div class="form-group">
+      <button type="submit" ng-click="save()">Add Category</button>
+    </div>
+  </form>
+
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>Url</td>
+            <td>Description</td>
+            <td>ID</td>
+            <td></td>
+        </tr>
+        <tr ng-repeat=" category in categoryList">
+            <td>{{category.Name}}</td>
+            <td>{{category.Url}}</td>
+            <td>{{category.$id}}</td>
+            <td>
+              <a href="#!edit/{{category.$id}}">Edit</a>
+              <a href="#!delete/{{category.$id}}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>

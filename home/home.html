@@ -1,0 +1,42 @@
+<div ng-controller="feedListController">
+  <form>
+
+    
+
+    <div class="form-group">
+      <label for="usr">Name:</label>
+      <input type="text" class="form-control" ng-model="feedsList.Name">
+    </div>
+    <div class="form-group">
+      <label for="usr">Url:</label>
+      <input type="text" class="form-control" ng-model="feedsList.Url">
+    </div>
+    <div class="form-group">
+      <label for="usr">Description:</label>
+      <input type="text" class="form-control" ng-model="feedsList.Description">
+    </div>
+    <div class="form-group">
+      <button type="submit" ng-click="save()">Add Feed</button>
+    </div>
+  </form>
+
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>Url</td>
+            <td>Description</td>
+            <td>ID</td>
+            <td></td>
+        </tr>
+        <tr ng-repeat=" feeds in feedsList">
+            <td>{{feeds.Name}}</td>
+            <td>{{feeds.Url}}</td>
+            <td>{{feeds.Description}}</td>
+            <td>{{feeds.$id}}</td>
+            <td>
+              <a href="#!edit/{{feeds.$id}}">Edit</a>
+              <a href="#!delete/{{feeds.$id}}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
